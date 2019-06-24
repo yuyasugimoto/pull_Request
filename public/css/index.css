@@ -1,0 +1,27 @@
+#contents {
+  width: 1200px;
+  margin: 100px auto 20px auto;
+}
+
+#contents .clearfix .floatBox {
+  display: block;
+  width: 376px;
+  padding: 40px 0px;
+  border: 2px solid #444444;
+  border-radius: 5px;
+  float: left;
+  margin-left: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+}
+
+#contents::after {
+  content: ".";
+  display: inline-block;
+  clear: both;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,66 @@
+.contents {
+  width: 1200px;
+  margin: 50px auto 20px auto;
+}
+
+.contents .floatbox {
+  float: left;
+  padding: 20px;
+}
+
+.contents .floatbox select {
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+}
+
+.contents .floatbox #apply-button {
+  background: #444444;
+  color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.contents::after {
+  content: ".";
+  display: inline-block;
+  clear: both;
+  visibility: hidden;
+}
+
+#assign_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#assign_table tr td {
+  padding: 10px;
+  text-align: center;
+  background: #444444;
+  color: #ffffff;
+}
+
+#assign_table tr td select {
+  border: none;
+  padding: 10px;
+}
+
+#assign_table tr td .assign-day select {
+  width: 75px;
+}
+
+#assign_table tr td .assign-user select {
+  width: 200px;
+}
+
+#assign_table tr td .apply {
+  text-align: center;
+}
+
+#assign_table tr .value {
+  background: #ffffff;
+  color: #444444;
+  padding: 10px 0px;
+  border-bottom: 1px solid #444444;
+}
