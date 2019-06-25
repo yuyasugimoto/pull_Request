@@ -19,6 +19,7 @@ class CreatePullTable extends Migration
             $table->integer('request_num');
             $table->dateTime('created_at_request');
             $table->string('request_urr',100);
+            $table->string('assing_user',100)->nullable();
             $table->text('comments');
             $table->text('commit_url');
             $table->text('diffL_url');

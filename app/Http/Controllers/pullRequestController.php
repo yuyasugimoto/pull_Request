@@ -13,9 +13,17 @@ class pullRequestController extends Controller
         $model = new pullRequestModel();
         
         return view('pull_request.index',[
-            "pullObj" => $model->select()
+            "pullObj" => $model->select(),
+            "assign" => $model->getAssign()
         ]);
         
+    }
+
+    public function postRequest(Request $request){
+
+        $model = new pullRequestModel();
+
+        $model->assignUpdate($request->input('assign_user'), $request->input('assign_day'), $request->input('request_number'));
     }
 
 }

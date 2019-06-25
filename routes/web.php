@@ -23,13 +23,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::prefix('auth')->middleware('guest')->group(function() {
+Route::post('/post/pull-request', "pullRequestController@postRequest");
 
-    Route::get('/{provider}', 'Auth\OAuthController@socialOAuth')
-        ->where('provider','google')
-        ->name('socialOAuth');
+
+// Route::prefix('auth')->middleware('guest')->group(function() {
+
+//     Route::get('/{provider}', 'Auth\OAuthController@socialOAuth')
+//         ->where('provider','google')
+//         ->name('socialOAuth');
  
-     Route::get('/{provider}/callback', 'Auth\OAuthController@handleProviderCallback')
-         ->where('provider','google')
-         ->name('oauthCallback');
- });
+//      Route::get('/{provider}/callback', 'Auth\OAuthController@handleProviderCallback')
+//          ->where('provider','google')
+//          ->name('oauthCallback');
+//  });

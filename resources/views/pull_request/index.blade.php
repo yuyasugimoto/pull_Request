@@ -5,7 +5,9 @@
     <div class="floatbox">
         Assign user
         <select name="user-name">
-            <option value="SUGIMOTO YUYA">SUGIMOTO YUYA</option>
+            @foreach ($assign as $human)
+                <option value="{{ $human->staff_name }}">{{ $human->staff_name }}</option>
+            @endforeach
         </select>
     </div>
     <div class="floatbox">
@@ -36,7 +38,13 @@
             <td class="value">
                 <span class="assing-usre">
                     <select name="assign">
-                        <option value="MORIMOTO MARIE">MORIMOTO MARIE</option>
+                        @foreach ($assign as $human)
+                        @if ($human->staff_name == $value->assing_user)
+                            <option value="{{ $human->staff_name }}" selected>{{ $human->staff_name }}</option>
+                        @else
+                            <option value="{{ $human->staff_name }}">{{ $human->staff_name }}</option>
+                        @endif
+                        @endforeach
                     </select>
                 </span>
             </td>
