@@ -17,7 +17,7 @@ class CreatePullTable extends Migration
         Schema::create('pull_table', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('request_num');
-            $table->dateTime('created_at');
+            $table->dateTime('created_at_request');
             $table->string('request_urr',100);
             $table->text('comments');
             $table->text('commit_url');

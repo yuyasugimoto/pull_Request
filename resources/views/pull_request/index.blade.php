@@ -28,7 +28,7 @@
                 <span class="number">{{ $value->request_num }}</span>
             </td>
             <td class="value">
-                <span class="created-at">{{ $value->created_at }}</span>
+                <span class="created-at">{{ $value->created_at_request }}</span>
             </td>
             <td class="value">
                 <span class="users">{{ $value->request_urr }}</span>
