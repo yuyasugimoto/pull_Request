@@ -124,6 +124,8 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
