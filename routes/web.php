@@ -15,15 +15,20 @@ Route::get('/', function () {
     return view('index.index');
 });
 
-Route::get('/pull-request', 'pullRequestController@index');
+Route::get('/pull-request', 'pullRequestController@index')->middleware('CheckIP');
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('CheckIP');;
+Route::get('/config/permission', 'permissionController@index')->middleware('CheckIP');;
+
+#/config/ipv4
+Route::get('/config/ipv4', 'permissionController@ipv4')->middleware('CheckIP');;
 
 
 Route::post('/post/pull-request', "pullRequestController@postRequest");
+
 
 
 // Route::prefix('auth')->middleware('guest')->group(function() {
