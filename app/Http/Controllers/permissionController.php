@@ -16,4 +16,10 @@ class permissionController extends Controller
     public function ipv4(){
         return \view('config.ipv4',[]);
     }
+
+
+    public function getipv4(Request $request){
+        
+    }
+
 }

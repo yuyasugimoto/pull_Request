@@ -10,9 +10,9 @@ class permission extends Model
     /**
      * 
      */
-    public function getIPv4(){
+    public function getIPv4($token){
 
-        $company = DB::table('company')->where('id','=',env('COMPANY_ID'))->get();
+        $company = DB::table('company')->where('id','=',$token)->get();
 
         $aryCompany = [];
         foreach($company as $cname){

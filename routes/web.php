@@ -27,11 +27,11 @@ Route::get('/config/permission', 'permissionController@index')->middleware('Chec
 Route::get('/config/ipv4', 'permissionController@ipv4')->middleware('CheckIP');;
 
 
-Route::post('/post/pull-request', "pullRequestController@postRequest");
+//Route::post('/post/pull-request', "pullRequestController@postRequest");
 
 Route::get('/get/getRequest', "pullRequestController@getRequest");
 
-
+Route::get('/get/permission_ipv4', 'permissionController@getipv4');
 
 // Route::prefix('auth')->middleware('guest')->group(function() {
 

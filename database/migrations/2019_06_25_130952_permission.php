@@ -17,6 +17,7 @@ class Permission extends Migration
         Schema::create('permission', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('ipv4');
+            $table->string('token');
             $table->timestamps();
         });
     }
