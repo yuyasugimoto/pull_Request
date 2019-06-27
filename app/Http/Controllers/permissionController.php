@@ -22,7 +22,7 @@ class permissionController extends Controller
         $model = new \App\permission();
 
         $this->validate($request,[
-            'token' => "require"
+            'token' => "required"
         ]);
 
         return json_encode($model->getipv4($request->input('token')));
