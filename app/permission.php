@@ -12,14 +12,9 @@ class permission extends Model
      */
     public function getIPv4($token){
 
-        $company = DB::table('company')->where('id','=',$token)->get();
+        $token_id = DB::table('company')->select('id')->where('token','=',$token)->get();
 
-        $aryCompany = [];
-        foreach($company as $cname){
-            $aryCompany[] = explode(',',$cname->permission_id);
-        }
-        $permission = DB::table('permission')
-            ->whereIn("id",$aryCompany[0])->get();
+        $permission = DB::table('permission')->select('id','ipv4','created_at')->where('token_id','=',$token_id);
 
         return $permission;
     }

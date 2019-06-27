@@ -15,7 +15,7 @@ class pullRequestModel extends Model
     }
 
     public function getAssign(){
-        $table = DB::table('assign')->get();
+        $table = DB::table('assign')->select('id','staff_name','created_at','updated_at')->get();
 
         return $table;
     }

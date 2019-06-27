@@ -19,7 +19,13 @@ class permissionController extends Controller
 
 
     public function getipv4(Request $request){
-        
+        $model = new \App\permission();
+
+        $this->validate($request,[
+            'token' => "require"
+        ]);
+
+        return json_encode($model->getipv4($request->input('token')));
     }
 
 }
