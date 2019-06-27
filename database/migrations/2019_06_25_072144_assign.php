@@ -18,6 +18,7 @@ class Assign extends Migration
             $table->bigIncrements('id');
             $table->string('staff_name');
             $table->integer('delete_flg');
+            $table->string('token_id');
             $table->timestamps();
         });
     }

@@ -26,6 +26,7 @@ class Users extends Migration
             // null許容に変更
             $table->string('password')->nullable();
             $table->rememberToken();
+            $table->string('token_id');
             $table->timestamps();
 
             // 複合ユニークキー

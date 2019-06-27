@@ -17,7 +17,7 @@ class Company extends Migration
         Schema::create('company', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('company_name');
-            $table->string('permission_id');
+            $table->string('token');
             $table->timestamps();
         });
     }

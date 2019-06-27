@@ -24,6 +24,7 @@ class CreatePullTable extends Migration
             $table->text('commit_url');
             $table->text('diffL_url');
             $table->datetime('review_day');
+            $table->string('token_id');
             $table->timestamps();
         });
     }
