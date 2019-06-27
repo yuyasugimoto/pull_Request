@@ -25,6 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/post/pull-request', "pullRequestController@postRequest");
 
+Route::get('/get/getRequest', "pullRequestController@getRequest");
+
 
 // Route::prefix('auth')->middleware('guest')->group(function() {
 

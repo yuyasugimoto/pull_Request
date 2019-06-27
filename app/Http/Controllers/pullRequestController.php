@@ -26,4 +26,12 @@ class pullRequestController extends Controller
         $model->assignUpdate($request->input('assign_user'), $request->input('assign_day'), $request->input('request_number'));
     }
 
+    //アサインDBからアサインできる人を取得
+    public function getRequest(Request $request){
+
+        $model = new pullRequestModel();
+
+        return json_encode($model->getAssign());
+    }
+
 }
