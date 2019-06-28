@@ -31,7 +31,23 @@ class pullRequestController extends Controller
 
         $model = new pullRequestModel();
 
-        return json_encode($model->getAssign());
+        $this->validate($request,[
+            'token' => "required"
+        ]);
+
+        return json_encode($model->getAssign($request->input('token')));
+    }
+
+    public function setssing(Request $request){
+
+        $model = new pullRequestModel();
+
+        $this->validate($request,[
+            'token' => "required"
+        ]);
+
+        $model->assignUpdate($request->input('update_json'),$request->input('token'));
+
     }
 
 }

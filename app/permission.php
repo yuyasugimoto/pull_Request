@@ -14,7 +14,7 @@ class permission extends Model
 
         $token_id = DB::table('company')->select('id')->where('token','=',$token)->get();
 
-        $permission = DB::table('permission')->select('id','ipv4','created_at')->where('token_id','=',$token_id);
+        $permission = DB::table('permission')->select('id','ipv4','created_at')->where('token_id','=',(string)$token_id[0]->id)->get();
 
         return $permission;
     }

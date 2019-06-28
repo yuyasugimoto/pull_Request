@@ -33,6 +33,9 @@ Route::get('/get/getRequest', "pullRequestController@getRequest");
 
 Route::get('/get/permission_ipv4', 'permissionController@getipv4');
 
+#/set/assing
+Route::get('/set/assing', 'pullRequestController@setssing');
+
 // Route::prefix('auth')->middleware('guest')->group(function() {
 
 //     Route::get('/{provider}', 'Auth\OAuthController@socialOAuth')

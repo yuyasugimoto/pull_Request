@@ -14,21 +14,34 @@ class pullRequestModel extends Model
         return $table;
     }
 
-    public function getAssign(){
-        $table = DB::table('assign')->select('id','staff_name','created_at','updated_at')->get();
+    public function getAssign($token){
+
+        $token_id = DB::table('company')->select('id')->where('token','=',$token)->get();
+
+        // $permission = DB::table('permission')->select('id','ipv4','created_at')->where('token_id','=',$token_id);
+
+        $table = DB::table('assign')->select('id','staff_name','created_at','updated_at')->where('token_id','=',(string)$token_id[0]->id)->get();
 
         return $table;
     }
 
-    public function assignUpdate($assign_user, $assign_day, $request_number){
+    public function assignUpdate($json,$token){
 
         #insert into pull_table  value(Null,999,'2019-06-25','sugimotoyuya','sugimotoyuya','0','https://pull.novizio.net','https://pull.novizio.ne','2019-06-25',Now(),Now());
         #into assign value(null,'morimotomarie','0',Now(),Now());
 
-        $rf = DB::update('update pull_table set assing_user = ?,review_day = ?,updated_at = Now() where request_num = ?', [$assign_user, $assign_day, $request_number]);
+        $token_id = DB::table('company')->select('id')->where('token','=',$token)->get();
 
-        return $rf;
+
+        $update_date = json_decode($json);
+
         
+
+        foreach ($update_date as $key => $value) {
+                DB::update('update assign set staff_name = ?, updated_at = Now() where id = ? and token_id = ?', [
+                    $value->update_value, $value->key, $token_id[0]->id
+                ]);
+        }
 
     }
 
