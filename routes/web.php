@@ -11,30 +11,37 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index.index');
-});
+// Route::get('/', function () {
+//     return view('index.index');
+// });
 
-Route::get('/pull-request', 'pullRequestController@index')->middleware('CheckIP');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home')->middleware('CheckIP');;
-Route::get('/config/permission', 'permissionController@index')->middleware('CheckIP');;
-
-#/config/ipv4
-Route::get('/config/ipv4', 'permissionController@ipv4')->middleware('CheckIP');;
+// Route::get('/pull-request', 'pullRequestController@index')->middleware('CheckIP');
 
 
-//Route::post('/post/pull-request', "pullRequestController@postRequest");
+// Auth::routes();
 
-Route::get('/get/getRequest', "pullRequestController@getRequest");
+// Route::get('/home', 'HomeController@index')->name('home')->middleware('CheckIP');;
+// Route::get('/config/permission', 'permissionController@index')->middleware('CheckIP');;
 
-Route::get('/get/permission_ipv4', 'permissionController@getipv4');
+// #/config/ipv4
+// Route::get('/config/ipv4', 'permissionController@ipv4')->middleware('CheckIP');;
 
-#/set/assing
-Route::get('/set/assing', 'pullRequestController@setssing');
+
+// //Route::post('/post/pull-request', "pullRequestController@postRequest");
+
+// Route::get('/get/getRequest', "pullRequestController@getRequest");
+
+// Route::get('/get/permission_ipv4', 'permissionController@getipv4');
+
+// #/set/assing
+// Route::get('/set/assing', 'pullRequestController@setssing');
+
+// #/put/assing
+// Route::get('/put/assing', 'pullRequestController@putassing');
+
+#get/request_task/
+Route::get('/get/request_task', 'pullRequestController@request_task');
+
 
 // Route::prefix('auth')->middleware('guest')->group(function() {
 
